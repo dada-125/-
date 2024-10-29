@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calendar</title>
+    <!-- FullCalendar CSS -->
+    <link href='https://unpkg.com/@fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='https://unpkg.com/@fullcalendar/daygrid/main.css' rel='stylesheet' />
+    <style>
+        .fc-toolbar {
+            background-color: white;
+            color: black;
+        }
+        .fc-toolbar h2, .fc-toolbar button {
+            color: black;
+        }
+        .fc-day.fc-selected {
+            background-color: navy;
+            color: white;
+        }
+        .fc-day.fc-today {
+            background-color: lightblue;
+            color: black;
+        }
+        .fc-event {
+            background-color: skyblue;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Calendar</h1>
+    <div id='calendar'></div>
+
+    <!-- FullCalendar JS -->
+    <script src='https://unpkg.com/@fullcalendar/core/main.js'></script>
+    <script src='https://unpkg.com/@fullcalendar/daygrid/main.js'></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['dayGrid'],
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth'
+                },
+                events: [
+                    {
+                        title: '학부모 상담주간(1~2학년, 10.28~11.1)',
+                        start: '2024-10-28',
+                        allDay: true
+                    },
+                    {
+                        title: '수업공개의 날(1~2학년)',
+                        start: '2024-10-29',
+                        allDay: true
+                    },
+                    {
+                        title: '동아리 활동(13/14)',
+                        start: '2024-10-30',
+                        allDay: true
+                    },
+                    {
+                        title: '미술 전시회(10.30~11.6)',
+                        start: '2024-10-30',
+                        allDay: true
+                    },
+                    {
+                        title: '미래과학자 상담 및 독서활동(1~2학년)',
+                        start: '2024-11-01',
+                        allDay: true
+                    },
+                    {
+                        title: '동아리 활동(14/14)',
+                        start: '2024-11-06',
+                        allDay: true
+                    },
+                    {
+                        title: '학생 대의원회(선거관리위원 선출, 7교시)',
+                        start: '2024-11-06',
+                        allDay: true
+                    },
+                    {
+                        title: '토론 캠프',
+                        start: '2024-11-07',
+                        allDay: true
+                    },
+                    {
+                        title: '미래과학자 상담 및 독서활동(1~2학년)',
+                        start: '2024-11-08',
+                        allDay: true
+                    },
+                    {
+                        title: '대학수학능력시험 예비 소집일',
+                        start: '2024-11-13',
+                        allDay: true
+                    },
+                    {
+                        title: '봉사 활동(3학년, 2시간)',
+                        start: '2024-11-13',
+                        allDay: true
+                    },
+                    {
+                        title: '수능 응원 행사',
+                        start: '2024-11-13',
+                        allDay: true
+                    },
+                    {
+                        title: '대학수학능력시험일',
+                        start: '2024-11-14',
+                        allDay: true
+                    },
+                    {
+                        title: '학교장 재량휴업일',
+                        start: '2024-11-15',
+                        allDay: true
+                    },
+                    {
+                        title: '위탁교육생 등교일',
+                        start: '2024-11-18',
+                        allDay: true
+                    },
+                    {
+                        title: '제 31대 학생자치회 임원 선거후보자 등록공고',
+                        start: '2024-11-18',
+                        allDay: true
+                    },
+                    {
+                        title: '릴레이 진로 특강 4차',
+                        start: '2024-11-20',
+                        allDay: true
+                    },
+                    {
+                        title: '미래과학자 성과발표회(2학년)',
+                        start: '2024-11-20',
+                        allDay: true
+                    },
+                    {
+                        title: '봉사 활동(3학년, 2시간)',
+                        start: '2024-11-20',
+                        allDay: true
+                    },
+                    {
+                        title: '영어 어휘 배틀(1~2학년, 7교시)',
+                        start: '2024-11-20',
+                        allDay: true
+                    },
+                    {
+                        title: '제 31대 학생자치 임원 선거후보 등록(11.25~29)',
+                        start: '2024-11-25',
+                        allDay: true
+                    },
+                    {
+                        title: '소방훈련 및 재난안전교육(전학년)',
+                        start: '2024-11-27',
+                        allDay: true
+                    },
+                    {
+                        title: '영어 말하기 발표회(1~2학년, 7교시)',
+                        start: '2024-11-27',
+                        allDay: true
+                    },
+                    {
+                        title: '흡연음주약물남용 예방 교육(전학년)',
+                        start: '2024-11-27',
+                        allDay: true
+                    },
+                    {
+                        title: '정시 학생부 작성 기준일',
+                        start: '2024-11-30',
+                        allDay: true
+                    }, 
+                    {
+                        title: '반부패 청렴 교육(전 교직원)',
+                        start: '2024-12-11',
+                        allDay: true
+                    }, 
+                    {
+                        title: '음주 운전 예방 교육(전 교직원)',
+                        start: '2024-12-11',
+                        allDay: true
+                    }, 
+                    {
+                        title: '지필평가 감독관 연수',
+                        start: '2024-12-11',
+                        allDay: true
+                    }, 
+                    {
+                        title: '학교 생활 기록부 연수(전교원)',
+                        start: '2024-12-11',
+                        allDay: true
+                    }, 
+                    {
+                        title: '2차 지필평가(전학년)',
+                        start: '2024-12-16',
+                        allDay:'2024-12-20'
+                    }, 
+                    {
+                        title: '위탁교육생 등교일',
+                        start: '2024-12-16',
+                        allDay: true
+                    }, 
+                    {
+                        title: '기숙사 입사 신청(12.23~26)',
+                        start: '2024-12-23',
+                        allDay: true
+                    },
+                    {
+                        title: '자매부대 방문',
+                        start: '2024-12-23',
+                        allDay: true
+                    },
+                    {
+                        title: '제 31대 학생자치회 임원 선거운동(12.23~26)',
+                        start: '2024-12-23',
+                        allDay: true
+                    },
+                    {
+                        title: '크리스마스 이브',
+                        start: '2024-12-24',
+                        allDay: true
+                    },
+                    {
+                        title: '크리스마스',
+                        start: '2024-12-25',
+                        allDay: true
+                    },
+                    {
+                        title: '제 31대 학생자치회 임원후보자 연설',
+                        start: '2024-12-26',
+                        allDay: true
+                    },
+                    {
+                        title: '미래과학자 상담 및 독서활동(1~2학년)',
+                        start: '2024-12-27',
+                        allDay: true
+                    },
+                    {
+                        title: '제 31대 학생자치회 임원 선거 투표 및 개표',
+                        start: '2024-12-27',
+                        allDay: true
+                    },
+                    {
+                        title: '기숙사 입사자 발표',
+                        start: '2024-12-30',
+                        allDay: true
+                    },
+                    {
+                        title: '부서 성과 나눔',
+                        start: '2024-12-31',
+                        allDay: true
+                    },
+                    {
+                        title: '정시모집원서 접수(12.31~1.3)',
+                        start: '2024-12-31',
+                        allDay: true
+                    },
+                    {
+                        title: '섣달 그믐날',
+                        start: '2024-12-31',
+                        allDay: true
+                    },
+                    {
+                        title: '새해첫날',
+                        start: '2025-01-01',
+                        allDay: true
+                    },
+                    {
+                        title: '학교 생활 기록부 점검',
+                        start: '2025-01-03',
+                        allDay: true
+                    },
+                    {
+                        title: '졸업식(10:30)',
+                        start: '2025-01-07',
+                        allDay: true
+                    },
+                    {
+                        title: '신임 부서장 연수(1.8~9)',
+                        start: '2025-01-08',
+                        allDay: true
+                    },
+                    {
+                        title: '종업식',
+                        start: '2025-01-08',
+                        allDay: true
+                    },
+                    {
+                        title: '진급 처리 완료',
+                        start: '2025-01-17',
+                        allDay: true
+                    },
+                    {
+                        title: '학생 생활 기록부 마감',
+                        start: '2025-01-17',
+                        allDay: true
+                    },
+                    {
+                        title: '학생자치회 간부 수련회(1.20~21)',
+                        start: '2025-01-20',
+                        allDay: true
+                    },
+                    {
+                        title: '설날 연휴',
+                        start: '2025-01-28',
+                        allDay: true
+                    },
+                    {
+                        title: '설날',
+                        start: '2025-01-29',
+                        allDay: true
+                    },
+                    {
+                        title: '설날 연휴',
+                        start: '2025-01-29',
+                        allDay: true
+                    },
+                    {
+                        title: '교과별, 부서별 협의회',
+                        start: '2025-02-24',
+                        allDay: true
+                    },
+                    {
+                        title: '부서별 업무 추진 계획 발표',
+                        start: '2025-02-24',
+                        allDay: true
+                    },
+                    {
+                        title: '부서별 자리 이동',
+                        start: '2025-02-24',
+                        allDay: true
+                    },
+                    {
+                        title: '선행 학습 예방 교육(전교원)',
+                        start: '2025-02-24',
+                        allDay: true
+                    },
+                    {
+                        title: '성적 관리 연수(전교원)',
+                        start: '2025-02-24',
+                        allDay: true
+                    },
+                    {
+                        title: '연간 학사 일정 안내 및 확정',
+                        start: '2025-02-24',
+                        allDay: true
+                    },
+                    {
+                        title: '삼일절',
+                        start: '2025-03-01',
+                        allDay: true
+                    }
+                ],
+                validRange: {
+                    start: '2024-08-01',
+                    end: '2025-02-28'
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
