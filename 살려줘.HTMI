@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calendar</title>
+    <!-- FullCalendar CSS -->
+    <link href='https://unpkg.com/@fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='https://unpkg.com/@fullcalendar/daygrid/main.css' rel='stylesheet' />
+</head>
+<body>
+    <h1>My Calendar</h1>
+    <div id='calendar'></div>
+
+    <!-- FullCalendar JS -->
+    <script src='https://unpkg.com/@fullcalendar/core/main.js'></script>
+    <script src='https://unpkg.com/@fullcalendar/daygrid/main.js'></script>
+    <script src='https://unpkg.com/@fullcalendar/google-calendar/main.js'></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [ 'dayGrid', 'googleCalendar' ],
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth'
+                },
+                googleCalendarApiKey: 'AIzaSyAvJrsrknbCg_NxOw3ssjJEvZCxCcgByao',
+                events: {
+                    googleCalendarId: 'aaa06ee85282c063ee13fa2d48c2dee57271dfa50f44cb1d1e1fc64c8eec57fa@group.calendar.google.com'
+                },
+                validRange: {
+                    start: '2024-08-01',
+                    end: '2025-02-28'
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
